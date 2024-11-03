@@ -23,6 +23,8 @@
 * Java JDK 8 ou superior
 * Maven
 * Banco de dados (ex: MySQL, PostgreSQL)
+* Execute o RabbitMQ com Docker
+* Chave de API do Google Cloud (para Gemini)
 
 **Passos:**
 
@@ -41,8 +43,28 @@
     ```bash
    java -jar target/TechPeach.jar
 
-5. **Execute a Aplicaçãos:**
+5. **Execute o RabbitMQ com Docker:**
+    ```bash
+    docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4.0-management
+
+![005.png](documentacao/005.png)
+![006.png](documentacao/006.png)
+<br>
+*   Acesse o RabbitMQ Management no endereço: http://localhost:15672
+![003.png](documentacao/003.png)
+![004.png](documentacao/004.png)
+<br>
+
+6. **Execute a Aplicaçãos:**
     * A aplicação estará disponível em http://localhost/
+    <br>
+
+7. **Verifique o Status da Aplicação com Actuator:**
+    * O Spring Actuator está configurado para monitoramento. Acesse o endpoint de saúde em:
+    ```bash
+    http://localhost:8080/actuator/health
+
+![002.png](documentacao/002.png)
 
 
 Para rodar os comandos acima no Windows, você pode usar o Prompt de Comando ou o PowerShell:
@@ -59,14 +81,13 @@ Certifique-se de que o Maven e o Java estão corretamente instalados e configura
 
 **Diagrama da entity da Sprint:**
     ![entity.png](documentacao/entity.png)
-**Diagrama repository da Sprint:**
-    ![repository.png](documentacao/repository.png)
-**Diagrama request e response da Sprint:**
-    ![request-response.png](documentacao/request-response.png)
+    
 **Diagrama service da Sprint:**
     ![service.png](documentacao/service.png)
+
 **Diagrama da controller da Sprint:**
     ![controller.png](documentacao/controller.png)
+
 **Diagrama da Sprint:**
     ![diagrama6.png](documentacao/diagrama6.png)
 
@@ -82,11 +103,19 @@ Certifique-se de que o Maven e o Java estão corretamente instalados e configura
     * https://youtu.be/0c4opnXL8fU
 
 
-
 ## Descrição do Problema e Solução
 
 ### Problema
 Planejar viagens pode ser um processo tedioso e desafiador, especialmente para encontrar atividades e locais que se alinhem com as preferências individuais dos viajantes.
+
+## Tecnologias Utilizadas
+
+* **Backend:** Java, Spring Boot, Spring Security, Spring Data JPA, Spring AMQP (RabbitMQ), Spring Boot Actuator
+* **Frontend:** Thymeleaf, HTML, CSS, JavaScript, Bootstrap
+* **Banco de Dados:** Oracle SQL
+* **IA:** Google Gemini API
+* **Mensageria:** RabbitMQ
+* **Containerização:** Docker
 
 ### Solução
 O TechPeach oferece uma plataforma online onde os usuários podem:
@@ -102,14 +131,6 @@ Viajantes e turistas que buscam uma experiência de viagem personalizada e memor
 - **Planejamento Simplificado:** Facilita o processo de planejamento de viagens.
 - **Personalização:** Cria itinerários sob medida adaptados às preferências dos usuários.
 - **Ofertas Exclusivas:** Oferece ofertas especiais em parceria com estabelecimentos locais.
-
-### Próximos Passos
-- Implementar autenticação de usuários com Spring Security.
-- Adicionar recursos de internacionalização para suportar múltiplos idiomas.
-- Integrar recursos de mensageria para comunicação assíncrona.
-- Implementar monitoramento da aplicação com Spring Boot Actuator.
-- Explorar a possibilidade de integrar recursos de IA para aprimorar as recomendações de locais (opcional).
-
 
 Com o TechPeach, os viajantes podem descobrir e reservar atividades personalizadas, tornando suas viagens mais memoráveis e autênticas!
 

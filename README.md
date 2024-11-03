@@ -94,13 +94,8 @@ Certifique-se de que o Maven e o Java estão corretamente instalados e configura
 
 ## Vídeo da Proposta Tecnológica
 
-**Link da Sprint 3:**
-    * https://youtu.be/lV95820MN6k
-**Link da Sprint 2:**
-    * https://youtu.be/JiGy_ohObWo
-
-**Link da Sprint 1:**
-    * https://youtu.be/0c4opnXL8fU
+**Link da Sprint 4:**
+* https://youtu.be/3SYGfeCLE_I
 
 
 ## Descrição do Problema e Solução
